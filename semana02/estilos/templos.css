@@ -1,0 +1,137 @@
+/* Reset Básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header / Navegação Mobile First */
+header {
+  background-color: #002244; /* Azul escuro conforme o layout */
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+/* Botão Hamburguer no Mobile */
+#menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+nav {
+  display: none; /* Oculto por padrão no mobile até clicar no botão */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #002244;
+}
+
+nav.open {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: #004488;
+}
+
+/* Layout Principal */
+main {
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+/* Galeria Grid */
+.residence-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 coluna no mobile */
+  gap: 1.5rem;
+}
+
+figure {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background-color: #002244;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}
+
+/* Media Query para Telas Maiores (Desktop View) */
+@media (min-width: 640px) {
+  #menu {
+    display: none; /* Oculta o botão hamburguer */
+  }
+
+  header {
+    flex-direction: row;
+  }
+
+  nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+  }
+
+  nav a {
+    padding: 0.5rem 1rem;
+  }
+
+  .residence-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+  }
+}
