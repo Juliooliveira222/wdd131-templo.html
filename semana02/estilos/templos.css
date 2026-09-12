@@ -36,13 +36,21 @@ header h1 {
 }
 
 nav {
-  display: none; /* Oculto por padrão no mobile até clicar no botão */
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background-color: #002244;
+  /* Em vez de display:none, usa-se transform/visibility ou opacity */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+nav.open {
+  max-height: 300px;
 }
 
 nav.open {
